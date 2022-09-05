@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.6 on linux)" generated="20220902 09:40:48.125" rpa="false" schemaversion="3">
+<suite id="s1" name="Atest" source="/home/luiggino/sdk/react/todo/src/test/robotframework/atest">
+<suite id="s1-s1" name="Validations" source="/home/luiggino/sdk/react/todo/src/test/robotframework/atest/validations.robot">
+<test id="s1-s1-t1" name="GET an existing todo" line="11">
+<kw name="GET" library="REST">
+<arg>/api/todos/67</arg>
+<tag>http</tag>
+<doc>*Sends a GET request to the endpoint.*</doc>
+<status status="PASS" starttime="20220902 09:40:48.520" endtime="20220902 09:40:48.544"/>
+</kw>
+<kw name="Output" library="REST">
+<arg>response</arg>
+<arg>body</arg>
+<tag>I/O</tag>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<msg timestamp="20220902 09:40:48.544" level="INFO">
+{
+    "seconds": 0.006241,
+    "status": 200,
+    "reason": "",
+    "body": {
+        "description": "aaaaaaaaaaaeeeeeeeeeeeeeeeeeeeaaaaa",
+        "id": 67,
+        "finished": false,
+        "created": 1661540702081
+    },
+    "headers": {
+        "Vary": "Origin, Access-Control-Request-Method, Access-Control-Request-Headers",
+        "Content-Type": "application/json",
+        "Transfer-Encoding": "chunked",
+        "Date": "Fri, 02 Sep 2022 13:40:48 GMT",
+        "Keep-Alive": "timeout=60",
+        "Connection": "keep-alive"
+    }
+}</msg>
+<status status="PASS" starttime="20220902 09:40:48.544" endtime="20220902 09:40:48.550"/>
+</kw>
+<kw name="String" library="REST">
+<arg>response</arg>
+<arg>body</arg>
+<arg>description "aaaaaaaaaaaeeeeeeeeeeeeeeeeeeeaaaaa"</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON string.*</doc>
+<msg timestamp="20220902 09:40:48.551" level="FAIL">Input not is valid JSON: "description "aaaaaaaaaaaeeeeeeeeeeeeeeeeeeeaaaaa"</msg>
+<status status="FAIL" starttime="20220902 09:40:48.550" endtime="20220902 09:40:48.552"/>
+</kw>
+<kw name="Boolean" library="REST">
+<arg>response</arg>
+<arg>body</arg>
+<arg>finished</arg>
+<arg>false</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON boolean.*</doc>
+<status status="NOT RUN" starttime="20220902 09:40:48.553" endtime="20220902 09:40:48.553"/>
+</kw>
+<kw name="Integer" library="REST">
+<arg>response</arg>
+<arg>body</arg>
+<arg>created</arg>
+<arg>1661540702081</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON integer.*</doc>
+<status status="NOT RUN" starttime="20220902 09:40:48.553" endtime="20220902 09:40:48.553"/>
+</kw>
+<status status="FAIL" starttime="20220902 09:40:48.519" endtime="20220902 09:40:48.554">Input not is valid JSON: "description "aaaaaaaaaaaeeeeeeeeeeeeeeeeeeeaaaaa"</status>
+</test>
+<status status="FAIL" starttime="20220902 09:40:48.145" endtime="20220902 09:40:48.554"/>
+</suite>
+<status status="FAIL" starttime="20220902 09:40:48.126" endtime="20220902 09:40:48.555"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Atest">Atest</stat>
+<stat pass="0" fail="1" skip="0" id="s1-s1" name="Validations">Atest.Validations</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
